@@ -9,7 +9,6 @@ import com.upgrad.orderprocessingservice.model.PaymentResponseVO;
 import com.upgrad.orderprocessingservice.repository.OrderProcessingRepository;
 import feign.FeignException;
 import lombok.extern.log4j.Log4j2;
-import org.bouncycastle.dvcs.MessageImprintBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -89,7 +88,4 @@ public class OrderProcessingService {
     private void orderProcessingListener(Message<OrderResponseVO> message){
         System.out.println("Recieved message from Kafka "+message.getPayload());
     }
-
-
-
 }
